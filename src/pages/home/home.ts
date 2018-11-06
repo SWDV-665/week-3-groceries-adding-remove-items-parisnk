@@ -8,9 +8,9 @@ import {ToastController} from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+//Defining a variable called title to hold the value of ion title in ion toolbar
   title = "Grocery";
-
+//Defining an array called items to hold the name and quantity of items
   items = [
     {
       name: "milk",
@@ -29,10 +29,11 @@ export class HomePage {
       quantity: 1
     },
   ];
-
+//injecting ToastController and AlertController in the constructor
 constructor(public navCtrl : NavController, public toastCtrl : ToastController, public alertCtrl : AlertController) {
 
   }
+  //Defing removeItem function for removing items and show the removed item in a toast
   removeItem(item, index) {
     console.log("Removing Item - ", item, index);
     const toast = this
@@ -45,6 +46,7 @@ constructor(public navCtrl : NavController, public toastCtrl : ToastController, 
      console.log("Adding item")
      this.showAddItemPrompt();
    }
+//Defining a function called showAddItemPrompt for adding items using an alert box
 showAddItemPrompt() {
   const prompt = this
     .alertCtrl
